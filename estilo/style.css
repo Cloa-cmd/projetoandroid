@@ -59,6 +59,7 @@ header > p { /*todo paragrafro dento do header*/
     padding-right: 11px;
     padding-left: 11px;
     margin: auto;
+    /*padding-bottom: 50%;*/
     text-shadow: 6px 3px rgb(37, 37, 37);
 }
 
