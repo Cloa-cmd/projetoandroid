@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');/*regra, importei do google fonts a fonte bebas neue*/
+
+@font-face {/*outra regra declarada*/
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');/*Busca font que baixei e coloquei na pasta*/
+    font-weight: normal;/*peso da fonte = normal*/
+}
+
+:root {/*Criando variaveis em root, root é raiz seletora. variavel==>(--)*/ 
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;/*coloquei a fonte padrao na variavel*/
+    --fonte-destaque: "Bebas Neue", sans-serif;/*coloquei a fonte importada na variavel*/
+    --fonte-android: 'Android', cursive; /*declaração de mais uma variavel*/
+}
+
+* { /*Asteristicos da uma definição global para todo css*/
+    margin: 0px; /*nesse caso tira todas as margens e os espaços*/
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0); ;/*Cor do fundo*/
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {/*todos os links que for da class externo colocar dps dele o grampinho*/
+    content: '\00A0\1F517'; 
+}
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));/*degrader*/
+    min-height: 149px; /*Altura minima */
+    text-align: center;
+    padding-top: 71px;
+
+}
+
+header > h1 {
+    color: white; /*Seletor h1 dentro do header */
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 19px;
+    text-shadow: 6px 5px rgb(37, 37, 37);/*Sombra nas Letras*/
+    
+}
+
+header > p { /*todo paragrafro dento do header*/
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 499px;
+    padding-right: 11px;
+    padding-left: 11px;
+    margin: auto;
+    text-shadow: 6px 3px rgb(37, 37, 37);
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 11px; /*pedding geral de 11px*/
+    box-shadow: .2px 7px 7px rgb(51, 51, 51);/*sombra*/
+}
+
+nav > a {/*Aplicaçoes no A dentro de Nave ou seja menu*/
+    color: white;
+    padding: 11px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold; /*Fonte negrito*/
+    transition-duration: .5sg;
+}
+
+nav > a:hover {/*Quando eu passa o mause em A que esta dentro de nave aciona a pseudoclasse houver*/
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main {
+    min-width: 300px; /*Tamnho maximo e tamanho minimo do main, Responsivo*/
+    max-width: 1000px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 31px;
+    padding: 21px;
+    box-shadow: 1px 1px 11px black;/*Sombra em main*/
+    border-bottom-left-radius: 11px; /*raio inferio direito com bordas*/
+    border-bottom-right-radius: 11px;/*raio inferio esquerdo com bordas*/
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+div.video {
+    background-color: var(--cor5);
+   /* margin-bottom: 29px; => espaço abaixo do video*/
+    margin: .1px -19px 29px -19px;
+    padding: 19px;
+    padding-bottom: 59%;
+    position: relative;
+    
+
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%; /*distancia da posicaç da esquerda para direita*/
+    left: 5%; /*distancia da posicao de cima para baxo*/
+    width: 91%;
+    height: 91%;
+   
+
+}
+main p {/*tudo que for paragrafo dento de main*/
+    margin: 15px 1px;
+    text-align: justify;
+    text-indent: 31px;/*Cria o espaço inicial do paragrafos*/
+    font-size: 1em;/*tamanho da letra*/
+    line-height: 1.5em;/*espaçamento entre linhas*/
+}
+main strong {/*tudo em main strong*/
+    color: var(--cor4);
+    font-weight: bold;
+   /* background-color: var(--cor2);*/
+    padding: 2px 6px;
+
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor0);
+    padding: auto;
+
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
+
+main img {
+    width: 100%;/*imagens 100% da area disponivel! responsivo*/
+}
+
+main img.pequena { /*Coloca o tamnho fixo em 49, coloca o display block e centraliza com auto*/
+    /*width: 49%;*/
+    max-width: 351px;
+    display: block;
+    margin: auto;
+}
+aside {
+    background-color: var(--cor1);
+    padding: 11px;
+    border-radius: 11px;
+      box-shadow: 3px 3px 8px rgb(68, 68, 68);
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: antiquewhite;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 3px 3px 8px rgb(68, 68, 68);
+}
+
+aside > ul{/*apenas as lista nas aside*/
+    list-style-position: inside;/*tira as bolinhas da lista*/
+    list-style-type: '\2714\00A0\00A0';/*coloca o visto => emoji pedia 2714 e os espaços*/
+    columns:2;
+
+}
+
+footer {
+    background-color: var(--cor5);
+    color: wheat;
+    text-align: right;
+    font-size: 0.7em;
+    padding: 5px;
+    text-decoration: underline; 
+
+}
+/*
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1)
+
+}
+*/
